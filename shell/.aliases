@@ -16,6 +16,8 @@ alias mfs='php artisan migrate:fresh --seed'
 alias nah='git reset --hard;git clean -df'
 alias p="phpunit"
 alias pf="phpunit --filter "
+alias d="php artisan dusk"
+alias df="php artisan dusk --filter"
 alias sshconfig="vi ~/.ssh/config"
 alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
 
@@ -34,6 +36,9 @@ alias o="open ."
 # List all files colorized in long format
 alias l="ls -laF"
 
+# PhpStorm
+alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
+
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
 
@@ -45,7 +50,7 @@ alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && kill
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl https://diagnostic.opendns.com/myip ; echo"
 alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Flush Directory Service cache
@@ -63,3 +68,10 @@ alias sudo='sudo '
 
 # Scape webpage
 alias scrape="scrapeUrl"
+
+# Switch NPM
+alias npmnpm="npm config set registry https://registry.npmjs.org"
+alias npmspatie="npm config set registry https://npm.spatie.be"
+
+# Restart touch bar
+alias touchbar="killall ControlStrip"

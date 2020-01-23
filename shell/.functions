@@ -21,8 +21,6 @@ function mkd() {
    mkdir -p "$@" && cd "$@"
 }
 
-# Open a valet project in the browser
-
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
 	local port="${1:-9000}"
@@ -93,7 +91,7 @@ function commit() {
 }
 
 xdebug() {
-   iniFileLocation="/usr/local/etc/php/7.4/conf.d/ext-xdebug.ini";
+   iniFileLocation="/usr/local/etc/php/7.4/php.ini";
    
    currentLine=`cat $iniFileLocation | grep xdebug.so`
 
@@ -115,4 +113,12 @@ function db {
     elif [ "$1" = "drop" ]; then
         mysql -uroot -e "drop database $2"
     fi
+}
+
+function scheduler () {
+    while :; do
+        php artisan schedule:run
+	echo "Sleeping 60 seconds..."
+        sleep 60
+    done
 }
