@@ -1,5 +1,6 @@
 # PHP
-alias phpunit="vendor/bin/phpunit"
+alias phpunit="php -d memory_limit=512M vendor/bin/phpunit"
+alias codecept="./vendor/bin/codecept"
 alias phpunitw="phpunit-watcher watch"
 alias a="php artisan"
 alias c="composer"
@@ -10,6 +11,7 @@ alias cda="composer dump-autoload -o"
 alias hostfile="sudo vi /etc/hosts"
 alias deploy='envoy run deploy'
 alias deploy-code='envoy run deploy-code'
+alias deploy-js='envoy run deploy-js'
 alias mfs='php artisan migrate:fresh --seed'
 alias nah='git reset --hard;git clean -df'
 alias p="phpunit"
@@ -31,9 +33,6 @@ alias o="open ."
 
 # List all files colorized in long format
 alias l="ls -laF"
-
-# PhPStorm
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
@@ -64,10 +63,3 @@ alias sudo='sudo '
 
 # Scape webpage
 alias scrape="scrapeUrl"
-
-# Marbles servers
-alias php02="ssh root@php02.marblessite.be"
-alias php06="ssh root@php06.marblessite.be"
-alias php07="ssh root@php07.marblessite.be"
-alias php08="ssh root@php08.marblessite.be"
-alias php09="ssh root@php09.marblessite.be"
